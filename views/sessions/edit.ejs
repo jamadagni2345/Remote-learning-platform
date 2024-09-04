@@ -1,0 +1,67 @@
+<%- include('../partials/header') %>
+
+<div>
+    <form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
+        <% if (user.instructor === false){ %>
+        <label>What do you want to learn instead?</label>
+        <br>
+        <select id="sub" name="subject">
+            <option value="<%=session.subject%>"><%=session.subject%></option>
+            <option value="Singing/Vocals">Singing/Vocals</option>
+            <option value="French Horn">French Horn</option>
+            <option value="Trombone">Trombone</option>
+            <option value="Trumpet/Cornet">Trumpet/Cornet</option>
+            <option value="Saxophone">Saxophone</option>
+            <option value="Tuba">Tuba</option>
+            <option value="Baritone/Euphonium">Baritone/Euphonium</option>
+            <option value="Oboe">Oboe</option>
+            <option value="Flute">Flute</option>
+            <option value="Clarinet">Clarinet</option>
+            <option value="Bassoon">Bassoon</option>
+            <option value="Piccolo">Piccolo</option>
+            <option value="Piano/Keyboard">Piano/Keyboard</option>
+            <option value="Recorder">Recorder</option>
+            <option value="Guitar">Guitar</option>
+            <option value="Violin">Violin</option>
+            <option value="Cello">Cello</option>
+            <option value="Drums">Drums</option>
+        </select>
+        <!--<input type="text" name="subject">-->
+        <br>
+        <label>Duration</label>
+        <label><small><small>(minutes, minimum 30 min)</small></small></label>
+        <input type="text" name="duration" value="<%=session.duration%>">
+        <br>
+        <label>Other Requests/Information:</label>
+        <br>
+        <textarea cols='60' rows='20' name="specialInstructions"><%=session.specialInstructions%></textarea>
+        <% } %>
+        <% if (user.instructor === true){ %>
+            <br>
+            <label>Attach Assignment</label>
+            <br>
+            <br>
+            <select name="assignments">
+                    <option value='-Choose from this Drop Down-'>-Choose from this Drop Down-</option>
+                <% assignments.forEach(function(i) { %>
+                    <option value='<%=i._id%>'><%= i.title %></option>
+                <% }); %>
+            </select>
+        <% } %>
+        <br>
+        <button type="submit">Update Session</button>
+      </form>
+      
+      <% if (user.instructor === true){ %>
+        <form class='form' action="/sessions/<%= session.id %>?_method=PUT" method="POST" autocomplete="off">
+        <label for="session time">Lesson Time/Date</label>
+        <br>
+        <input type="datetime-local" id="session-time" name="when" >
+        <br>
+        <button type="submit">Update Date/Time</button>
+        </form>
+    <% } %>
+
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,60 @@
+
+<%- include('../partials/header') %>
+
+&nbsp
+<form class="form" id="new-form" action="/sessions" method="POST" novalidate>
+    <label>What do you want to learn?</label>
+    <br>
+    <select name="subject">
+        <option value="---Please Choose from the Drop Down---">---Please Choose from the Drop Down---</option>
+        <option value="Singing">Singing</option>
+        <option value="French Horn">French Horn</option>
+        <option value="Trombone">Trombone</option>
+        <option value="Trumpet">Trumpet</option>
+        <option value="Saxophone">Saxophone</option>
+        <option value="Tuba">Tuba</option>
+        <option value="Baritone/Euphonium">Baritone/Euphonium</option>
+        <option value="Oboe">Oboe</option>
+        <option value="Flute">Flute</option>
+        <option value="Clarinet">Clarinet</option>
+        <option value="Bassoon">Bassoon</option>
+        <option value="Piccolo">Piccolo</option>
+        <option value="Piano/Keyboard">Piano</option>
+        <option value="Recorder">Recorder</option>
+        <option value="Guitar">Guitar</option>
+        <option value="Violin">Violin</option>
+        <option value="Cello">Cello</option>
+        <option value="Drums">Drums</option>
+    </select>
+    <!--<input type="text" name="subject">-->
+    <br>
+    <label for="session time">Lesson Time/Date</label>
+    <br>
+    <label for="session time"><small><small>(please allow at least 48 hours until lesson)</small></small></small></label>
+    <br>
+    <input type="datetime-local" id="session-time" name="when" >
+    <br>
+    <label>Duration</label>
+    <br>
+    <label><small><small>(minutes, minimum 30)</small></small></label>
+    <br>
+    <input type="text" name="duration">
+    <br>
+    <label>Other Requests/Information:</label>
+    <br>
+    <textarea cols='60' rows='20' name="specialInstructions"></textarea>
+    <br>
+    <% if (user.instructor === true){ %>
+      <label>Assign Student</label>
+      <br>
+        <select name="createdBy">
+          <% student.forEach(function(i) { %>
+            <option value='<%=i._id%>'><%= i.name %></option>
+          <% }); %>
+        </select>
+    <% } %>
+
+    <input type="submit" value="Add Session">
+  </form>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,191 @@
+body {
+  padding: 0;
+  margin: 0 0 0 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image:url('https://imgur.com/1S2kq1m.gif');
+  background-repeat: no-repeat;
+  background-color: #a55b39;
+  background-size: 100%;
+  width: 100%;
+  color: #fff;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+
+a {
+  color: white;
+}
+
+#ctrCTA {
+  margin-top: 2.5vh;
+  margin-bottom: 15vh;
+  font-size: 3.45vw;
+}
+
+h1 {
+  font-size: 4.6vw;
+}
+
+#tagline {
+  margin: 0 0 8vh 0;
+}
+
+.btn{
+  background: #943a10;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  color: #FFFFFF;
+  font-family: Arial;
+  font-size: 2.3vw;
+  font-weight: 700;
+  padding: 1.5vh 2.5vw 1.5vh 2.5vw;
+  margin: 1vh 30px 0 0;
+  text-shadow: 1px 2px 0px #000000;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border: groove #FFFFFF 1px;
+}
+
+.btn:hover {
+  background: #A1A1A1;
+  background: linear-gradient(top,  #EBEBEB,  #A1A1A1);
+  background: -ms-linear-gradient(top,  #EBEBEB,  #A1A1A1);
+  background: -webkit-gradient(linear, left top, left bottom, from(#EBEBEB), to(#A1A1A1));
+  background: -moz-linear-gradient(top,  #EBEBEB,  #A1A1A1);
+  color: #444444;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  text-shadow: none;
+  border: solid #2A1C15 1px;
+}
+
+/* Call to Action Button */
+
+.CTA {
+  background: #880f0f;
+  background-image: -webkit-linear-gradient(top, #F01010, #880f0f);
+  background-image: -moz-linear-gradient(top, #F01010, #880f0f);
+  background-image: -ms-linear-gradient(top, #F01010, #880f0f);
+  background-image: -o-linear-gradient(top, #F01010, #880f0f);
+  background-image: linear-gradient(to bottom, #F01010, #880f0f);
+  box-shadow: 0px 1px 21px 4px #EC6542;
+  -webkit-box-shadow: 0px 1px 21px 4px #EC6542;
+  -moz-box-shadow: 0px 1px 21px 4px #EC6542;
+}
+
+.CTA:hover {
+  border: groove #FFFFFF 1px;
+  background: #FF9494;
+  background-image: -webkit-linear-gradient(top, #FF9494, #FF0000);
+  background-image: -moz-linear-gradient(top, #FF9494, #FF0000);
+  background-image: -ms-linear-gradient(top, #FF9494, #FF0000);
+  background-image: -o-linear-gradient(top, #FF9494, #FF0000);
+  background-image: linear-gradient(to bottom, #FF9494, #FF0000);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 1px 21px 4px rgb(241, 190, 190);
+  -webkit-box-shadow: 0px 1px 21px 4px rgb(241, 190, 190);
+  -moz-box-shadow: 0px 1px 21px 4px rgb(241, 190, 190);
+  text-decoration: none;
+}
+
+/* End Call to Action Button */
+
+#logo {
+  width: 30vw;
+  max-width: 150px;
+  height: auto;
+  margin: 0vh 0 9vh 0;
+}
+
+/* Selling Point Start */
+
+#sellIt {
+  font-size: 14px;
+  padding: 0px;
+  margin: 0 0 10vh 0;
+  background-color: #2A1C15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.sellPt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin: 1vh 0vw 1vh 0vw;
+  padding: 0 0vw 0 0vw;
+}
+
+.sellImg{
+  width: 15vw;
+  height: auto;
+  max-width: 99px; /* Avoid attribution requirement by keeping below 100px */
+  max-height: 99px; /* Avoid attribution requirement by keeping below 100px */
+  margin: 1vh 9vw 0 9vw;
+  padding: 0 0vw 0 0vw;
+}
+
+.sellItm {
+  margin: 0vh 4vw 0 4vw;
+  padding: 0 0vw 0 0vw;
+  font-size: 2.87vw;
+}
+
+#caveat {
+  margin: 4vh 4vw 4vh 4vw;
+  font-size: 2.87vw;
+}
+
+#btmCTA{
+  margin: 0 0 3vh 1vw;
+}
+
+/* Selling Point End */
+
+.footer{
+  bottom: 0vh;
+  margin-bottom: 0vh;
+  background: #2A1C15;
+  color: white;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  margin: 1px 0vw 0px 0vw;
+}
+
+.footlogo {
+  width: 50px;
+  height: auto;
+  padding: 0 0 0 0;
+  margin: 0 6vw 0 6vw;
+}
+
+#footerText {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 2vw;
+  line-height: 10px;
+  padding: 0 1vw 0 1vw;
+  margin: 0 2vw 0 2vw;
+}

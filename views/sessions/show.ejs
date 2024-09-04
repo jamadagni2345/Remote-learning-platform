@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+<br>
+<h3>Lesson, Detailed View</h3>
+
+<section class="sectStyle">
+    <div class="itm"> <h3>Subject:&nbsp <%= session.subject %></h3> </div>
+    <div> <b>Time/Date:</b>&nbsp <%= session.when.toLocaleString([],{hour: '2-digit', minute: '2-digit'}) %> </div>
+    <div> <b>Duration:</b>&nbsp <%= session.duration %> min</div>
+    <div> <b>Instructor:</b>&nbsp <%= session.instructor %></div>
+    <div><b>Special Instructions & Requests:</b></div>
+    <div><%= session.specialInstructions %></div>
+
+    <div class="itm"><h3>Assignments</h3> </div>
+    <% session.assignments.forEach(asn => { %>
+    <div><h4><%= asn.title %></h4></div>
+    <div>Complete:&nbsp
+        <% if (asn.complete === true) { %></div>
+            <%= 'Yes' %></div> 
+        <% } else { %>
+            <%= 'No'%></div>
+        <% } %>
+        <br>
+    <div><%= asn.text %></div>
+    <br>
+    
+        <% asn.link.forEach(function(l,idx) { %>
+            <li class='itm'><a href="<%= asn.link[idx] %>"><%= asn.link[idx] %></a></li>
+        <% }) %>
+    <% }) %>
+    
+
+    <br>
+    <button onclick="location.href='/sessions/<%= session.id %>/edit'" type='button' class='btn'>Update Lesson</button>
+    <br>
+    <br>
+    <form action="/sessions/<%= session.id %>?_method=DELETE"
+        class="delete-form" method="POST"> 
+        <button class='btn delBtn' type="submit">Cancel Lesson</button> 
+   </form>
+</section> 
+
+<%- include('../partials/footer') %>

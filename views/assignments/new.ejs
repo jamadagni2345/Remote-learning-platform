@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<br>
+<form class='form' id="new-form" action="/assignments" method="POST">
+    <label><b>Title:</b></label>
+    <br>
+    <input type="text" name="title">
+    <br>
+    <label>Lesson Instructions:</label>
+    <br>
+    <textarea cols='60' rows='20' name="text"></textarea>
+    <br>
+    <div id="link">
+        <label>Link</label>
+        <br>
+        <br>
+        <input type="text" name="link">
+        <br>
+        <br>
+        <button type="button" id="lnkBtn" onclick="handleClick()">Add an Additional Link</button>
+    </div>
+    <br>
+    <input type="submit" value="Add Assignment">
+</form>
+
+<!--Event function for Link  Append-->
+
+<script>
+    function handleClick(){
+        document.getElementById('link').insertAdjacentHTML('afterbegin', '<label>Link:</label><input type="text" name="link"></input>');
+    }
+</script>
+
+<%- include('../partials/footer') %>
